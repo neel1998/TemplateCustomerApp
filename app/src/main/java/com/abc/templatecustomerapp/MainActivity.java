@@ -3,18 +3,12 @@ package com.abc.templatecustomerapp;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.abc.templatecustomerapp.Model.User;
 
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,11 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.items_list_view);
 
+        User user = User.getUserInstance();
+        ((TextView)navigationView.getHeaderView(0).findViewById(R.id.nav_header_name)).setText("Hey, " + user.getName());
+        ((TextView)navigationView.getHeaderView(0).findViewById(R.id.nav_header_email)).setText(user.getEmail());
+
+
         if (drawer != null) {
             ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.setDrawerListener(actionBarDrawerToggle);
@@ -54,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_orders:
+                        startActivity(new Intent(MainActivity.this, OrdersActivity.class));
+                }
                 return false;
             }
         });
