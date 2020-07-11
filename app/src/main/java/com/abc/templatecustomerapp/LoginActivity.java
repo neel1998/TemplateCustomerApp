@@ -125,9 +125,9 @@ public class LoginActivity extends AppCompatActivity {
                                 jsonObject.getString("psswd"),
                                 jsonObject.getString("name"),
                                 jsonObject.getString("email"),
+                                jsonObject.getString("id"),
                                 jsonObject.getString("address"),
                                 jsonObject.getString("contact"),
-                                jsonObject.getString("id"),
                                 token);
 
                         return true;

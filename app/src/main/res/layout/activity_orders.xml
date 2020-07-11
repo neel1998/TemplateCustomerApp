@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".OrdersActivity">
 
-
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/orders_activity_swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ExpandableListView
+            android:id="@+id/orders_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
