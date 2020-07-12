@@ -78,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_orders:
                         startActivity(new Intent(MainActivity.this, OrdersActivity.class));
+                        break;
+                    case R.id.nav_cart:
+                        startActivity(new Intent(MainActivity.this, CartActivity.class));
+                        break;
+                    case R.id.nav_profile:
+                        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                        break;
                 }
                 return false;
             }
