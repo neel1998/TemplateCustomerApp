@@ -1,5 +1,5 @@
 #!/bin/bash
-mainPath=/home/ubuntu/TemplateCustomerApp
+mainPath=/home/neel/AndroidStudioProjects/TemplateCustomerApp
 
 #JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 #export JAVA_HOME
